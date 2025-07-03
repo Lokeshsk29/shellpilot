@@ -32,6 +32,14 @@ def disable():
         typer.echo(f"❌ {get_assistant_name()} has been disabled.")
     else:
         typer.echo(f"⚠️ Assistant already disabled.")
-
+        
+@app.command()
+def status():
+    flag = Path.home().joinpath(".shellpilot_enable")
+    if flag:
+        typer.echo(f"✅ {get_assistant_name()} is  enabled.")
+    else:
+        typer.echo(f"❌ {get_assistant_name()} is  disabled.")
+    
 if __name__ == "__main__":
     app()

@@ -15,14 +15,14 @@ class Greeting:
         "📘 Learning never exhausts the mind. — Leonardo da Vinci",
     ]
     def __init__(self):
-        self.assistan_name = self._get
+        self.assistant_name = self._get_assistance_name()
         
     def greet(self):
         if not self._is_enabled():
             return
 
         print()
-        print(f"{self.greeting} I’m {self.assistant_name}, your terminal assistant.")
+        print(f"I’m {self.assistant_name}, your terminal assistant.")
         print(self._get_quote())
         print()
     def _get_assistance_name(self) -> str:
@@ -72,6 +72,7 @@ class Greeting:
     
 
 if __name__ == "__main__":
+    print(Path.home())
     assistant = Greeting()
     assistant.greet()
         
